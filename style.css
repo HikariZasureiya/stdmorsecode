@@ -1,0 +1,200 @@
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow:hidden
+}
+
+body{
+    background: linear-gradient(#041404,#020302);
+    height:100%;
+
+}
+#header{
+    color: #1bd11b;
+    font-family: 'Press Start 2P',sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+.mode{
+    position: absolute;
+    left: 52%;
+    top:28%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+
+}
+.checkbox-group {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.text {
+    display: inline-block;
+    margin-right: 10px;
+    font-family: 'Press Start 2P',sans-serif;
+    color: #1bd11b;
+    margin-right: 60px ;
+}
+.mode #tm{
+    margin-left: 50px;
+}
+.sel{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #1bd11b;
+    border-radius: 4px;
+    outline: none;
+    position:relative;
+    cursor:pointer;
+}
+
+.sel:checked {
+    background-color: #1bd11b;
+  }
+.input{
+    position: absolute;
+    top:40%;
+    left:50.5%;
+    transform: translate(-50%, -50%);
+}
+.output{
+    
+    position: absolute;
+    left:50.5%;
+    top:70%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+#inputbox{ 
+    font-size: smaller;
+    width: 700px;
+    height: 150px;
+    padding: 7px;
+    resize: none;
+    margin:10px;
+    background-color: transparent;
+    border-radius: 3px ;
+    font-family: 'Press Start 2P',sans-serif;
+    border: 2px solid #1bd11b;
+    color:#1bd11b;
+}
+#outputbox{ 
+    width: 700px;
+    height: 350px;
+    padding: 10px;
+    margin:10px;
+    background-color: transparent;
+    border-radius: 3px ;
+    font-family: 'Press Start 2P',sans-serif;
+    border: 2px solid #1bd11b;
+    color:#1bd11b;
+    font-size: small;
+    cursor: default;
+    resize: horizontal;
+}
+.submit{
+    position: absolute;
+    top: 35%;
+    margin-left: 10px;
+    background:transparent;
+    border:1px solid #1bd11b;
+    padding: 10px;
+    font-family: 'Press Start 2P',sans-serif;
+    color:#1bd11b;
+    transition: 0.2s;
+}
+
+.submit:hover{
+    position: absolute;
+    top: 35%;
+    margin-left: 10px;
+    background-color: #1bd11b;
+    border:1px solid #1bd11b;
+    padding: 10px;
+    font-family: 'Press Start 2P',sans-serif;
+    color:black;
+    cursor: pointer;
+}
+.submit:active{
+    padding: 9px;
+    font-size:0.8rem;
+}
+.copyright{
+    position: absolute;
+    left:50%;
+    top: 98%;
+    transform: translate(-50%, -50%);
+    color: #1bd11b;
+    font-family: 'Press Start 2P',sans-serif;
+    font-size: 0.6rem;
+}
+@media (max-width: 768px) {
+    #header {
+        font-size: 18px; /* Adjust the font size for smaller devices */
+    }
+
+    .mode {
+        position: absolute;
+        left: 51%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .checkbox-group {
+        display: flex; /* Display checkboxes and text in a flex container */
+        align-items: center; /* Vertically align items in the center */
+        margin-bottom: 10px; /* Add some space between the checkbox groups */
+    }
+    
+    .text {
+        margin-left: 10px; /* Add some space between checkbox and text */
+        font-family: 'Press Start 2P', sans-serif;
+        color: #1bd11b;
+    }
+
+    .input {
+        top: 40%;
+        left: 50%; 
+    }
+
+    .output {
+        top: 62%; 
+        left: 50%;
+        margin-top: 50px;
+    }
+
+    #inputbox {
+        width: 420px; 
+    }
+
+    #outputbox {
+        width: 420px; 
+        height: 250px;
+    }
+    .submit{
+        position: absolute;
+        top:41%;
+        left:98%;
+        
+    }
+    .submit:hover{
+        position: absolute;
+        top:41%;
+        left:98%;
+        transition: 0.2s;
+    }
+    .mode #tm{
+        margin-left: 5px;
+}
+.copyright{
+    font-size: 0.6rem;
+    padding: 1px;
+    white-space: nowrap;
+}
+}
