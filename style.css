@@ -98,33 +98,8 @@ body{
     cursor: default;
     resize: horizontal;
 }
-.submit{
-    position: absolute;
-    top: 35%;
-    margin-left: 10px;
-    background:transparent;
-    border:1px solid #1bd11b;
-    padding: 10px;
-    font-family: 'Press Start 2P',sans-serif;
-    color:#1bd11b;
-    transition: 0.2s;
-}
 
-.submit:hover{
-    position: absolute;
-    top: 35%;
-    margin-left: 10px;
-    background-color: #1bd11b;
-    border:1px solid #1bd11b;
-    padding: 10px;
-    font-family: 'Press Start 2P',sans-serif;
-    color:black;
-    cursor: pointer;
-}
-.submit:active{
-    padding: 9px;
-    font-size:0.8rem;
-}
+
 .copyright{
     position: absolute;
     left:50%;
@@ -172,36 +147,19 @@ body{
     }
 
     #inputbox {
-        width: 200px; 
+        width: 300px; 
+
+        font-size: 7px;
     }
 
     #outputbox {
-        width: 200px; 
-        height: 150px;
-    }
-    .submit{
-        position: absolute;
-        top:41%;
-        left:98%;
-        padding: 5px;
+        width: 300px; 
+        height: 200px;
+        margin-top: 50px;
         font-size: 7px;
-        transition: 0.2s;
-        font-size: 7px;
-    }
-    .submit:hover{
-        position: absolute;
-        top:41%;
-        left:98%;
-        padding: 5px;
-        font-size: 7px;
-        
     }
     .mode #tm{
         margin-left: 5px;
-}
-.submit:active{
-    padding: 4px;
-    font-size:6px;
 }
 .copyright{
     font-size: 0.4rem;
