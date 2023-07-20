@@ -11,7 +11,7 @@ const mtxt={
     '.-.-.-': '.', '--..--': ',', '..--..': '?', '-.-.--': '!', ' ': ' ',
     '-..-.': '/', '.-...': '&', '---...': ':', '-.-.-.': ';', '-...-': '=',
     '.-.-.': '+', '-....-': '-', '..--.-': '_', '.-..-.': '"', '...-..-': '$',
-    '.--.-.': '@', '-.--.': '(', '-.--.-': ')', '.----.': '\''
+    '.--.-.': '@', '-.--.': '(', '-.--.-': ')', '.----.': '\'','':''
   };
 
 
@@ -99,15 +99,8 @@ function type(){
     }
 };
 const interval= setInterval(type,80); //interval
-    
 
-//convert button
-
-submit.addEventListener("click",function(){
-    if((input.value).trim()==''){
-        alert("Enter some text");
-        input.value='';
-    }
+function out(){
     let text1=(input.value).trim();
     if (tm.checked){
         let outputtext='';
@@ -127,6 +120,7 @@ submit.addEventListener("click",function(){
         output.innerHTML=`${outputtext.trim("/")}`;
     }
     else if(mt.checked){
+
         let outputtext='';
         let text2=text1.split("/");
         for (const ele of text2) {
@@ -143,8 +137,8 @@ submit.addEventListener("click",function(){
         }
         output.innerHTML=`${outputtext.trim(" ")}`;
     }
-});
-
+};
+interval= setInterval(out,1);
 
 
 
