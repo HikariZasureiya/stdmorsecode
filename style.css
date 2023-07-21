@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -9,45 +8,47 @@ body {
 body {
     background: linear-gradient(#041404, #020302);
     height: 100%;
+}
+
+#header {
+    height: 120px; /* Add a fixed height for the header */
+    margin-top: 30px;
+    color: #1bd11b;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+.body1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: calc(100% - 50px); 
 }
-
-#header {
-    color: #1bd11b;
-    font-family: "Press Start 2P", sans-serif;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.mode {
-    display: flex;
+.mode{
+    margin-left: 40px;
     white-space: nowrap;
     align-items: center;
     justify-content: space-between;
-}
 
+}
 .checkbox-group {
     display: inline-flex;
     align-items: center;
     margin-right: 10px;
+    margin-bottom: 20px;
 }
-
 .text {
     display: inline-block;
     margin-right: 10px;
-    font-family: "Press Start 2P", sans-serif;
+    font-family: 'Press Start 2P',sans-serif;
     color: #1bd11b;
-    margin-right: 60px;
+    margin-right: 60px ;
 }
-
-.mode #tm {
+.mode #tm{
     margin-left: 50px;
 }
-
-.sel {
+.sel{
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -56,12 +57,19 @@ body {
     border: 2px solid #1bd11b;
     border-radius: 4px;
     outline: none;
-    position: relative;
-    cursor: pointer;
+    position:relative;
+    cursor:pointer;
 }
 
 .sel:checked {
     background-color: #1bd11b;
+  }
+  .input {
+    width: 100%;
+}
+
+.output {
+    width: 100%;
 }
 
 .container {
@@ -72,114 +80,97 @@ body {
     gap: 0;
 }
 
-.input {
-    width: 100%;
-}
-
-.output {
-    width: 100%;
-}
-
-#inputbox {
+#inputbox{ 
     font-size: smaller;
     width: 700px;
     height: 150px;
     padding: 10px;
     resize: none;
-    margin: 10px;
+    margin:10px;
     background-color: transparent;
-    border-radius: 3px;
-    font-family: "Press Start 2P", sans-serif;
+    border-radius: 3px ;
+    font-family: 'Press Start 2P',sans-serif;
     border: 2px solid #1bd11b;
-    color: #1bd11b;
+    color:#1bd11b;
 }
-
-#outputbox {
+#outputbox{ 
     width: 700px;
     height: 350px;
     padding: 10px;
-    margin: 10px;
+    margin:10px;
     background-color: transparent;
-    border-radius: 3px;
-    font-family: "Press Start 2P", sans-serif;
+    border-radius: 3px ;
+    font-family: 'Press Start 2P',sans-serif;
     border: 2px solid #1bd11b;
-    color: #1bd11b;
+    color:#1bd11b;
     font-size: small;
     cursor: default;
     resize: horizontal;
 }
 
-.copyright {
+.copy{
     position: absolute;
-    left: 50%;
+    left:50%;
     top: 98%;
     transform: translate(-50%, -50%);
+}
+.copyright{
+    text-align: center;
     color: #1bd11b;
-    font-family: "Press Start 2P", sans-serif;
+    font-family: 'Press Start 2P',sans-serif;
     font-size: 0.6rem;
 }
+@media (max-width: 414px) and (max-height: 896px){
 
-@media (max-width: 414px) and (max-height: 896px) {
     #header {
-        font-size: 12px;
-        /* Adjust the font size for smaller devices */
+        font-size:12px;
+        margin-bottom: 100px;
+        color: #1bd11b;
+        font-family: 'Press Start 2P', sans-serif;
+        text-align: center;
     }
 
     .mode {
         position: absolute;
         left: 55%;
-        top: 20%;
+        top: 25%;
         transform: translate(-50%, -50%);
         font-size: 10px;
     }
-
+    
     .checkbox-group {
-        display: flex;
-        /* Display checkboxes and text in a flex container */
-        align-items: center;
-        /* Vertically align items in the center */
-        margin-bottom: 10px;
-        /* Add some space between the checkbox groups */
+        display: flex; /* Display checkboxes and text in a flex container */
+        align-items: center; /* Vertically align items in the center */
+        margin-bottom: 10px; /* Add some space between the checkbox groups */
     }
-
+    
     .text {
-        margin-left: 10px;
-        /* Add some space between checkbox and text */
-        font-family: "Press Start 2P", sans-serif;
+        margin-left: 10px; /* Add some space between checkbox and text */
+        font-family: 'Press Start 2P', sans-serif;
         color: #1bd11b;
     }
-
-    .input {
-        top: 40%;
-        left: 50%;
-    }
-
-    .output {
-        top: 62%;
-        left: 50%;
-        margin-top: 50px;
-    }
-
     #inputbox {
-        width: 300px;
-
+        width: 300px; 
         font-size: 7px;
     }
 
     #outputbox {
-        width: 300px;
+        width: 300px; 
         height: 200px;
         margin-top: 50px;
         font-size: 7px;
     }
-
-    .mode #tm {
+    .mode #tm{
         margin-left: 5px;
-    }
+}
 
-    .copyright {
-        font-size: 0.4rem;
-        padding: 1px;
-        white-space: nowrap;
+.mode{
+    margin-left: 27px ;
+}
+
+.copyright{
+    font-size: 0.4rem;
+    padding: 1px;
+    white-space: nowrap;
     }
 }
