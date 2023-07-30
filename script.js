@@ -1,5 +1,5 @@
 //values
-const mtxt = {
+const mtxt={
     '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
     '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
     '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O',
@@ -11,8 +11,8 @@ const mtxt = {
     '.-.-.-': '.', '--..--': ',', '..--..': '?', '-.-.--': '!', ' ': ' ',
     '-..-.': '/', '.-...': '&', '---...': ':', '-.-.-.': ';', '-...-': '=',
     '.-.-.': '+', '-....-': '-', '..--.-': '_', '.-..-.': '"', '...-..-': '$',
-    '.--.-.': '@', '-.--.': '(', '-.--.-': ')', '.----.': '\'', '': ''
-};
+    '.--.-.': '@', '-.--.': '(', '-.--.-': ')', '.----.': '\'','':''
+  };
 
 
 const txtm = {
@@ -36,106 +36,139 @@ const txtm = {
     'Ä': '.-.-', 'Ö': '---.', 'Ü': '..--', 'ẞ': '...--..',
     // French
     'À': '.--.-', 'È': '.-..-', 'Ù': '..--'
-};
+  };
 
+  
 
 //elements
 const tm = document.getElementById("tm");
 const mt = document.getElementById("mt");
-var header = document.getElementById("header");
-const submit = document.getElementById("sub");
-const input = document.getElementById("inputbox");
-const output = document.getElementById("outputbox");
+var header=document.getElementById("header");
+const submit=document.getElementById("sub");
+const input=document.getElementById("inputbox");
+const output=document.getElementById("outputbox");
+const copybutton = document.getElementById('copy1');
 
 //texts
-var text = ["Standard Morse Code Translator   ", ".-- . .-.. -.-. --- -- .   "];
-var displaytext = "";
+var text=["Standard Morse Code Translator   ",".-- . .-.. -.-. --- -- .   "];
+var displaytext="";
 
 //global variables for typing animation
-var i = 0;
-var j = 0;
-var textele = 0;
+var i=0;
+var j=0;
+var textele=0;
 
 //event to select only one checkbox at a time
-tm.addEventListener("change", function () {
-    if (this.checked) {
-        mt.checked = false;
+tm.addEventListener("change",function(){
+    if(this.checked){
+        mt.checked=false;
     }
 });
-mt.addEventListener("change", function () {
-    if (this.checked) {
-        tm.checked = false;
+mt.addEventListener("change",function(){
+    if(this.checked){
+        tm.checked=false;
     }
 });
 
 //limit resizing
 document.addEventListener("DOMContentLoaded", function () {
-    if (output.style.width === '350px') {
+    if (output.style.width ==='350px') {
         output.style.resize = "none";
     }
 });
 
 //typing animation function
-function type() {
-    if (i < text[textele].length && j == 0) {
-        displaytext += (text[textele])[i];
-        header.innerText = displaytext;
+function type(){
+    if(i<text[textele].length && j==0){
+        displaytext+=(text[textele])[i];
+        header.innerText=displaytext;
         i++;
     }
-    else {
-        j = 1;
+    else{
+        j=1;
     }
-    if (i > 0 && j == 1) {
+    if(i>0 && j==1){
         i--;
-        displaytext = displaytext.slice(0, -1);
-        header.innerText = displaytext;
+        displaytext=displaytext.slice(0, -1);
+        header.innerText=displaytext;
     }
-    else if (i <= 0 && j == 1) {
-        j = 0;
+    else if(i<=0 && j==1){
+        j=0;
         textele++;
-        if (textele > text.length - 1) {
-            textele = 0;
+        if (textele>text.length-1){
+            textele=0;
         }
     }
 };
-const interval = setInterval(type, 80); //interval
+const interval= setInterval(type,80); //interval
 
-function out() {
-    let text1 = (input.value).trim();
-    if (tm.checked) {
-        let outputtext = '';
-        let text2 = text1.split(" ");
+function out(){
+    copybutton.innerHTML='<u>copy</u>';
+    let text1=(input.value).trim();
+    if (tm.checked){
+        let outputtext='';
+        let text2=text1.split(" ");
         for (const ele of text2) {
-            for (const txt of ele) {
-                if (txtm[txt.toUpperCase()] == undefined) {
-                    outputtext += "# ";
+            for(const txt of ele){
+                if(txtm[txt.toUpperCase()]==undefined){
+                    outputtext+="# ";
                 }
-                else {
-                    outputtext += txtm[txt.toUpperCase()] + " ";
+                else{
+                outputtext+=txtm[txt.toUpperCase()]+" ";
                 }
             }
-            outputtext += '/ ';
-        }
-        outputtext = outputtext.replace(/\/\s$/, '');
-        output.innerHTML = `${outputtext.trim("/")}`;
+            outputtext+='/ ';
+          }
+          outputtext = outputtext.replace(/\/\s$/, '');
+        output.innerHTML=`${outputtext.trim("/")}`;
     }
-    else if (mt.checked) {
+    else if(mt.checked){
 
-        let outputtext = '';
-        let text2 = text1.split("/");
+        let outputtext='';
+        let text2=text1.split("/");
         for (const ele of text2) {
-            const text3 = (ele.trim(" ")).split(" ");
-            for (const txt of text3) {
-                if (mtxt[txt] == undefined) {
-                    outputtext += "# ";
+            const text3=(ele.trim(" ")).split(" ");
+            for(const txt of text3){
+                if(mtxt[txt]==undefined){
+                    outputtext+="# ";
                 }
-                else {
-                    outputtext += mtxt[txt];
+                else{
+                outputtext+=mtxt[txt];
                 }
             }
-            outputtext += " ";
+            outputtext+=" ";
         }
-        output.innerHTML = `${outputtext.trim(" ")}`;
+        output.innerHTML=`${outputtext.trim(" ")}`;
     }
 };
-interval = setInterval(out, 1);
+input.addEventListener("keyup",out)
+
+
+function copyFromTextarea() {
+    
+    output.select();
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(output.value)
+            .then(() => {
+                copybutton.innerHTML='<u>copied</u>'
+                
+            })
+            .catch((error) => {
+                alert('Copying text to clipboard failed. Please copy manually.');
+            });
+    } else {
+
+        alert('Copying text to clipboard is not supported in this browser. Please copy manually.');
+    }
+}
+
+
+copybutton.addEventListener('click',copyFromTextarea);
+
+  
+
+
+
+
+
