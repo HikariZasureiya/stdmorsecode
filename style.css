@@ -2,20 +2,37 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 }
 
 body {
     background: linear-gradient(#041404, #020302);
-    height: 100%;
+    background-attachment: fixed;
+    min-height: 100%;
+}
+.nav{
+    background-color: #020302;
+    height:40px;
+    opacity: 0.5;
 }
 
 #header {
-    height: 120px; 
-    margin-top: 30px;
+    height: 100px; 
     color: #1bd11b;
     font-family: 'Press Start 2P', sans-serif;
     text-align: center;
+}
+.about{
+    font-family: 'Press Start 2P',sans-serif;
+    color: white;
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 36px;
+
+}
+.contents{
+    display: flex;
+    align-items: center;
 }
 
 .body1 {
@@ -97,7 +114,8 @@ body {
     width: 700px;
     height: 350px;
     padding: 10px;
-    margin:10px;
+    margin: 10px;
+    margin-top:5px;
     background-color: transparent;
     border-radius: 3px ;
     font-family: 'Press Start 2P',sans-serif;
@@ -105,15 +123,19 @@ body {
     color:#1bd11b;
     font-size: small;
     cursor: default;
-    resize: horizontal;
 }
 
 .copy{
-    position: absolute;
-    left:50%;
-    top: 98%;
-    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-family: 'Press Start 2P',sans-serif;
+    border: none;
+    align-self:self-end;
+    padding-right:20px;
+    cursor:pointer;
+    color: #1bd11b;
+    font-size:12px;
 }
+
 .copyright{
     text-align: center;
     color: #1bd11b;
@@ -143,7 +165,7 @@ body {
     #outputbox {
         width: 300px; 
         height: 200px;
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 7px;
     }
 
@@ -165,5 +187,20 @@ body {
         font-family: 'Press Start 2P',sans-serif;
         font-size: 7px;
     }
-
+    .copy{
+        font-size: 7px;
+    }
+    .about{
+        font-family: 'Press Start 2P',sans-serif;
+        color: white;
+        margin-left:10px;
+        margin-right:10px;
+        font-size: 20px;
+    
+    }
+    .nav{
+        background-color: #020302;
+        height:25px;
+        opacity: 0.5;
+    }
 }
